@@ -355,6 +355,9 @@
         <div class="header fade-in">
             <h1>DIOR Mascara</h1>
             <p>La Formula Perfetta per Ciglia Maximize e Affascinanti</p>
+            <!-- pulsante per attivare/disattivare il suono rilassante -->
+            <button class="audio-toggle" onclick="toggleAudio()">🎧 Suono</button>
+            <audio id="relaxAudio" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" loop></audio>
         </div>
         
         <div class="content">
@@ -492,6 +495,27 @@
             });
         }
         setInterval(createSparkle, 500);
+        
+        // manage relaxing audio toggle
+        function toggleAudio() {
+            const audio = document.getElementById('relaxAudio');
+            const btn = document.querySelector('.audio-toggle');
+            if (!audio) return;
+            if (audio.paused) {
+                audio.play().catch(() => {});
+                btn.textContent = '🔇 Muto';
+            } else {
+                audio.pause();
+                btn.textContent = '🎧 Suono';
+            }
+        }
+        // ensure audio volume is moderate on load
+        window.addEventListener('load', () => {
+            const audio = document.getElementById('relaxAudio');
+            if (audio) {
+                audio.volume = 0.5;
+            }
+        });
         
         // scroll fade-in
         function handleScroll() {
