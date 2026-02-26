@@ -1,7 +1,16 @@
 # mascara-Dior
 un sito sul mascara di Dior
 
-Questa repository contiene una semplice pagina web descrittiva sul mascara Dior. La pagina illustra la formula del prodotto, i benefici, e fornisce informazioni anche sul marchio Dior. Nell'HTML sono state incorporate due immagini tramite codici base64 (forniti dall'utente) oltre a un esempio esterno.
+Questa repository contiene una pagina web descrittiva sul mascara Dior, ora arricchita con dettagli di prodotto, consigli di applicazione, una galleria visiva con adesivi, colori vivaci, animazioni e uno **slideshow** automatico.
+
+La pagina illustra:
+- la formula del prodotto e i suoi ingredienti,
+- i benefici e la tenuta,
+- consigli pratici per l'applicazione,
+- informazioni estese sul marchio Dior,
+- una sezione grafica con colori di sfondo dinamici e transizioni sulle immagini.
+
+Nell'HTML sono state incorporate due immagini tramite codici base64 (forniti dall'utente) e sono presenti varie immagini esterne con etichette illustrate (nuovo, best seller, ecc.). Lo slideshow cicla automaticamente ogni 5 secondi e dispone di pulsanti avanti/indietro.
 
 ## Informazioni sul brand
 Dior (Christian Dior SE) è una casa di moda francese fondata nel 1946 da Christian Dior. È famosa per il suo stile elegante e l'innovazione nei settori della moda e della bellezza. La divisione cosmetica, Dior Beauty, propone prodotti di lusso come rossetti, profumi e il celebre mascara che unisce performance e cura delle ciglia.
