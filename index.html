@@ -327,6 +327,24 @@
             80% { opacity:0.8; }
             100% { transform: translateX(110%) translateY(var(--endY)); opacity:0; }
         }
+        /* lava lamp style blobs */
+        .lava-blob {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,69,0,0.6);
+            border-radius: 40%;
+            animation: morph 6s ease-in-out infinite;
+            pointer-events: none;
+            mix-blend-mode: screen;
+        }
+        @keyframes morph {
+            0% {transform: scale(1) translate(0,0); border-radius: 40%;}
+            25% {transform: scale(1.3) translate(10px,20px); border-radius: 60%;}
+            50% {transform: scale(0.8) translate(-20px,30px); border-radius: 50%;}
+            75% {transform: scale(1.1) translate(20px,-10px); border-radius: 70%;}
+            100% {transform: scale(1) translate(0,0); border-radius: 40%;}
+        }
         
         /* color shift header */
         @keyframes colorShift {
@@ -495,6 +513,25 @@
             });
         }
         setInterval(createSparkle, 500);
+        
+        // lava lamp blobs
+        function createLava() {
+            const container = document.querySelector('.slideshow-container');
+            if (!container) return;
+            const blob = document.createElement('div');
+            blob.className = 'lava-blob';
+            const x = Math.random() * 80 + 10;
+            const y = Math.random() * 80 + 10;
+            blob.style.left = x + '%';
+            blob.style.top = y + '%';
+            container.appendChild(blob);
+            blob.addEventListener('animationiteration', () => {
+                blob.style.left = (Math.random() * 80 + 10) + '%';
+                blob.style.top = (Math.random() * 80 + 10) + '%';
+            });
+            setTimeout(() => { blob.remove(); }, 12000);
+        }
+        setInterval(createLava, 1500);
         
         // manage relaxing audio toggle
         function toggleAudio() {
