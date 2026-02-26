@@ -143,6 +143,26 @@
             border-radius: 4px;
         }
         
+        /* sezione marchio aggiunta */
+        .brand-section {
+            margin-top: 30px;
+        }
+
+        .brand-section h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.6em;
+            border-bottom: 2px solid #666;
+            padding-bottom: 8px;
+        }
+
+        .brand-section p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 12px;
+            font-size: 1.05em;
+        }
+        
         .benefit-item strong {
             color: #333;
             display: block;
@@ -180,6 +200,8 @@
         <div class="content">
             <div class="image-section">
                 <img src="https://media.sephora.eu/content/dam/digital/pim/published/D/DIOR/583962/270685-media_swatch.jpg?scaleWidth=585&scaleHeight=585&scaleMode=fit" alt="Dior Mascara">
+                <!-- immagini incorporate in base64 fornite dall'utente -->
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAREBISEA8PEBUWFRkVFhAQDw8QEBAPFRgWFhYVFRYYICggGBomHxUVITEhJykrLi4uFx8zODMsNygwLisBCgoKDg0OGhAQGzAlHiYxKy4tKzcvNSw1LSs3LS0rLy03LS8tNy0rLS0rKy0tNTc1LS0vMi0tLS0tNDcrNS0rNf/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABgcCBQgBBAP/xABLEAABAwICBQYHDQYEBwAAAAABAAIDBBESIQUGBzFBEyJRcXOxMzQ1YXSz8AgUIyQlMkJygZGywcJDUoKDobSiw9HxFURiY6PS4f/EABgBAQEBAQEAAAAAAAAAAAAAAAABBAMC/8QAHhEBAQACAgIDAAAAAAAAAAAAAAECEQMxMkESISL/2gAMAwEAAhEDEQA/ALxREQYTSBrXOO5oJPUBcqntM7eYonlsOjpJAPpSzsi/wta7vVoa0zFlDWPG9tPM4dYjcfyXIOnhadw9t5QW23b9MTYaNiHXUvP6FutI7Y5aenpp30McgnbiwNqHMLMr7yw3XP0G9TDWzybo76n5IOi9SdbI9JQmRkT4i22JjnNcOcLizhv3dAUjVX7CfFpv5fc5WggItHrfrEygpzK4YiThYLOwl/AOI3BaHZ7r27SEkkMsTWva3GHxh2BzL2zve28W6V6+F1sTpEReQREQEREBERAREQEREBERAREQEREBERAREQabXPybXeiz+qeuSNYfDu9uJXXOuA+Tq30Wb1T1yPrF4w/24lBr4d6mGtXkzR31PyKh0SmOs3kvR/1T+aC3thPi838vucrRVX7CvF5v5fc5WggrLbPVkRNbgqgA0/CsdamxPIbhkafnndbovvzKg2yqr5PScItiL8TLslwANIOZafnjcbea/BfftggeamSYwNYLiISunie54aLAtjD7t+1qhurukDDUxvDYXEHLleYwbs77mgdJ861Yz86R1SiwhkDmtcCCCAQQbggi4IPELNZVEREBERARY36PvXuH7etB5i+3qS56D94WS1+l9N01K288rY8rgE851v3RxSTY+656P6pi8x/otfobTtNVtxQSteeLL2kZ9Zu8LZK2aHgcF6hCxt0KDJF4CvUBERAREQEREGq1s8n1no03q3LkXWPx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``" alt="Altra immagine formula">
             </div>
             
             <div class="description-section">
@@ -187,6 +209,9 @@
                 
                 <p>
                     Il mascara Dior è formulato con una tecnologia avanzata che combina ingredienti naturali e sintetici di alta qualità, progettati per offrire una tenuta superiore, colore intenso e protezione alle ciglia.
+                </p>
+                <p>
+                    Questo mascara è il risultato di decenni di ricerca Dior in tecnologie cosmetiche. Le setole del pennello sono progettate per raccogliere ogni ciglio e distribuire uniformemente la formula, offrendo un effetto lungo e voluminoso.
                 </p>
                 
                 <div class="formula-section">
@@ -221,6 +246,12 @@
                             <p>Facile da rimuovere con struccante</p>
                         </div>
                     </div>
+                
+                <div class="brand-section">
+                    <h2>Il Marchio Dior</h2>
+                    <p>Dior è un'icona mondiale della moda e della bellezza, fondato da Christian Dior nel 1946. Il brand è sinonimo di lusso, eleganza e innovazione. La linea cosmetica Dior unisce arte e scienza, offrendo prodotti di alta qualità amati professionalmente e dai consumatori in tutto il mondo.</p>
+                    <p>Il mascara Dior rappresenta l'eccellenza del marchio nel settore beauty, combinando anni di ricerca e conoscenza delle esigenze delle donne per creare formule avanzate che valorizzano lo sguardo.</p>
+                </div>
                 </div>
             </div>
         </div>
