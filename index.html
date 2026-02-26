@@ -296,6 +296,21 @@
         .sparkle {
             animation: sparkle 2s ease-in-out infinite;
         }
+        /* particles that float across slideshow */
+        .sparkle-particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: radial-gradient(circle, #ffffff 0%, #ffeb3b 60%, rgba(255,255,255,0) 100%);
+            border-radius: 50%;
+            opacity: 0.9;
+            animation: moveSpark 3s linear infinite;
+        }
+        @keyframes moveSpark {
+            0% { transform: translateX(-10%) translateY(var(--startY)); opacity:1; }
+            80% { opacity:0.8; }
+            100% { transform: translateX(110%) translateY(var(--endY)); opacity:0; }
+        }
         
         /* color shift header */
         @keyframes colorShift {
@@ -442,6 +457,25 @@
         }
         // auto advance every 5 seconds
         setInterval(function() { changeSlide(1); }, 5000);
+        
+        // sparkle particles over slideshow
+        function createSparkle() {
+            const container = document.querySelector('.slideshow-container');
+            if (!container) return;
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle-particle';
+            const startY = Math.random() * 80 + 10 + '%';
+            const endY = Math.random() * 80 + 10 + '%';
+            sparkle.style.setProperty('--startY', startY);
+            sparkle.style.setProperty('--endY', endY);
+            const delay = Math.random() * 3;
+            sparkle.style.animationDelay = `${delay}s`;
+            container.appendChild(sparkle);
+            sparkle.addEventListener('animationend', () => {
+                sparkle.remove();
+            });
+        }
+        setInterval(createSparkle, 500);
         
         // scroll fade-in
         function handleScroll() {
