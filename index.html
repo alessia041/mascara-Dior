@@ -379,9 +379,22 @@
                 grid-template-columns: 1fr;
             }
         }
+        /* titolo pagina principale */
+        .page-title {
+            text-align: center;
+            font-size: 3em;
+            color: #e91e63;
+            margin: 20px 0;
+            animation: titleGlow 2s infinite alternate, titleBounce 3s infinite;
+        }
+        @keyframes titleGlow {
+            0% {text-shadow: 0 0 5px #e91e63;}
+            100% {text-shadow: 0 0 20px #ff80ab;}
+        }
     </style>
 </head>
 <body>
+    <h1 class="page-title">Mascara Dior</h1>
     <div class="container">
         <div class="header fade-in">
             <h1>Mascara Dior</h1>
