@@ -8,7 +8,7 @@ La pagina illustra:
 - i benefici e la tenuta,
 - consigli pratici per l'applicazione,
 - informazioni estese sul marchio Dior,
-- una sezione grafica con colori di sfondo dinamici e transizioni sulle immagini.
+- una sezione grafica con colori di sfondo dinamici, animazioni sparkle sulle immagini e un effetto fade‑in al scroll.
 
 Nell'HTML sono state incorporate due immagini tramite codici base64 (forniti dall'utente) e sono presenti varie immagini esterne con etichette illustrate (nuovo, best seller, ecc.). Lo slideshow cicla automaticamente ogni 5 secondi e dispone di pulsanti avanti/indietro.
 

@@ -38,6 +38,7 @@
             font-size: 2.5em;
             margin-bottom: 10px;
             letter-spacing: 1px;
+            animation: colorShift 5s infinite alternate;
         }
         
         .header p {
@@ -275,6 +276,34 @@
             margin: 0;
         }
         
+        /* fade-in on scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* sparkle effect for images */
+        @keyframes sparkle {
+            0% {filter: brightness(1) contrast(1);}
+            50% {filter: brightness(1.3) contrast(1.2);}
+            100% {filter: brightness(1) contrast(1);}
+        }
+        .sparkle {
+            animation: sparkle 2s ease-in-out infinite;
+        }
+        
+        /* color shift header */
+        @keyframes colorShift {
+            0% {color: #ffffff;}
+            50% {color: #ffeb3b;}
+            100% {color: #ffffff;}
+        }
+        
         @media (max-width: 768px) {
             .content {
                 grid-template-columns: 1fr;
@@ -292,14 +321,14 @@
 </head>
 <body>
     <div class="container">
-        <div class="header">
+        <div class="header fade-in">
             <h1>DIOR Mascara</h1>
             <p>La Formula Perfetta per Ciglia Maximize e Affascinanti</p>
         </div>
         
         <div class="content">
             <div class="image-section">
-                <img src="https://media.sephora.eu/content/dam/digital/pim/published/D/DIOR/583962/270685-media_swatch.jpg?scaleWidth=585&scaleHeight=585&scaleMode=fit" alt="Dior Mascara">
+                <img src="https://media.sephora.eu/content/dam/digital/pim/published/D/DIOR/583962/270685-media_swatch.jpg?scaleWidth=585&scaleHeight=585&scaleMode=fit" alt="Dior Mascara" class="sparkle">
                 <!-- immagini incorporate in base64 fornite dall'utente -->
                 <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAREBISEA8PEBUWFRkVFhAQDw8QEBAPFRgWFhYVFRYYICggGBomHxUVITEhJykrLi4uFx8zODMsNygwLisBCgoKDg0OGhAQGzAlHiYxKy4tKzcvNSw1LSs3LS0rLy03LS8tNy0rLS0rKy0tNTc1LS0vMi0tLS0tNDcrNS0rNf/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABgcCBQgBBAP/xABLEAABAwICBQYHDQYEBwAAAAABAAIDBBESIQUGBzFBEyJRcXOxMzQ1YXSz8AgUIyQlMkJygZGywcJDUoKDobSiw9HxFURiY6PS4f/EABgBAQEBAQEAAAAAAAAAAAAAAAABBAMC/8QAHhEBAQACAgIDAAAAAAAAAAAAAAECEQMxMkESISL/2gAMAwEAAhEDEQA/ALxREQYTSBrXOO5oJPUBcqntM7eYonlsOjpJAPpSzsi/wta7vVoa0zFlDWPG9tPM4dYjcfyXIOnhadw9t5QW23b9MTYaNiHXUvP6FutI7Y5aenpp30McgnbiwNqHMLMr7yw3XP0G9TDWzybo76n5IOi9SdbI9JQmRkT4i22JjnNcOcLizhv3dAUjVX7CfFpv5fc5WggItHrfrEygpzK4YiThYLOwl/AOI3BaHZ7r27SEkkMsTWva3GHxh2BzL2zve28W6V6+F1sTpEReQREQEREBERAREQEREBERAREQEREBERAREQabXPybXeiz+qeuSNYfDu9uJXXOuA+Tq30Wb1T1yPrF4w/24lBr4d6mGtXkzR31PyKh0SmOs3kvR/1T+aC3thPi838vucrRVX7CvF5v5fc5WggrLbPVkRNbgqgA0/CsdamxPIbhkafnndbovvzKg2yqr5PScItiL8TLslwANIOZafnjcbea/BfftggeamSYwNYLiISunie54aLAtjD7t+1qhurukDDUxvDYXEHLleYwbs77mgdJ861Yz86R1SiwhkDmtcCCCAQQbggi4IPELNZVEREBERARY36PvXuH7etB5i+3qS56D94WS1+l9N01K288rY8rgE851v3RxSTY+656P6pi8x/otfobTtNVtxQSteeLL2kZ9Zu8LZK2aHgcF6hCxt0KDJF4CvUBERAREQEREGq1s8n1no03q3LkXWPx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``" alt="Altra immagine formula">
                 <img src="data:image/jpeg;base64,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...." alt="Seconda immagine Dior">
@@ -307,15 +336,15 @@
                 <div class="gallery">
                     <div style="position:relative;">
                         <span class="sticker">Nuovo</span>
-                        <img src="https://via.placeholder.com/150?text=Mascara+1" alt="Mascara 1">
+                        <img src="https://via.placeholder.com/150?text=Mascara+1" alt="Mascara 1" class="sparkle">
                     </div>
                     <div style="position:relative;">
                         <span class="sticker">Best Seller</span>
-                        <img src="https://via.placeholder.com/150?text=Mascara+2" alt="Mascara 2">
+                        <img src="https://via.placeholder.com/150?text=Mascara+2" alt="Mascara 2" class="sparkle">
                     </div>
                     <div style="position:relative;">
                         <span class="sticker">Limited</span>
-                        <img src="https://via.placeholder.com/150?text=Scovolino" alt="Scovolino Dior">
+                        <img src="https://via.placeholder.com/150?text=Scovolino" alt="Scovolino Dior" class="sparkle">
                     </div>
                 </div>
                 <!-- slideshow aggiuntivo -->
@@ -413,6 +442,19 @@
         }
         // auto advance every 5 seconds
         setInterval(function() { changeSlide(1); }, 5000);
+        
+        // scroll fade-in
+        function handleScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            const windowBottom = window.innerHeight + window.scrollY;
+            elements.forEach(el => {
+                if (windowBottom > el.offsetTop + 50) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('load', handleScroll);
     </script>
 </body>
 </html>
