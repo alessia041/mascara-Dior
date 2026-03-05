@@ -54,21 +54,7 @@
             align-items: start;
         }
         
-        .image-section {
-            text-align: center;
-        }
-        
-        .image-section img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-        }
-        
-        .image-section img:hover {
-            transform: scale(1.05);
-        }
+
         
         .description-section h2 {
             color: #333;
@@ -164,17 +150,7 @@
             font-size: 1.05em;
         }
         
-        /* stili galleria e adesivi */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-        .gallery img {
-            width: 100%;
-            border-radius: 6px;
-        }
+
         .sticker {
             position: absolute;
             background: #e91e63;
@@ -205,14 +181,7 @@
             line-height: 1.6;
         }
         
-        /* animazioni immagini */
-        .image-section img, .gallery img {
-            transition: transform 0.4s ease, filter 0.4s ease;
-        }
-        .image-section img:hover, .gallery img:hover {
-            transform: scale(1.1) rotate(2deg);
-            filter: brightness(1.2);
-        }
+
         
         /* colori aggiuntivi */
         body {
@@ -227,22 +196,6 @@
             border-radius: 8px;
         }
         
-        /* slideshow */
-        .slideshow-container {
-            position: relative;
-            max-width: 100%;
-            margin: 20px auto;
-            overflow: hidden;
-            /* animated background to make effects visible */
-            background: linear-gradient(135deg, #0d0d2b 0%, #1a1a40 50%, #0d0d2b 100%);
-            background-size: 400% 400%;
-            animation: bgAnimation 20s ease infinite;
-        }
-        @keyframes bgAnimation {
-            0% {background-position: 0% 50%;}
-            50% {background-position: 100% 50%;}
-            100% {background-position: 0% 50%;}
-        }
         /* audio control button */
         .audio-toggle {
             position: absolute;
@@ -259,35 +212,8 @@
         .audio-toggle:hover {
             background: rgba(0,0,0,0.7);
         }
-        .slide {
-            display: none;
-            text-align: center;
-        }
-        .slide img {
-            width: 100%;
-            border-radius: 6px;
-        }
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: auto;
-            padding: 16px;
-            margin-top: -22px;
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.3s;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-        }
-        .next {
-            right: 0;
-            border-radius: 3px 0 0 3px;
-        }
-        .prev:hover, .next:hover {
-            background-color: rgba(0,0,0,0.8);
-        }
+
+
         
         .benefit-item strong {
             color: #333;
@@ -312,48 +238,9 @@
             transform: translateY(0);
         }
         
-        /* sparkle effect for images */
-        @keyframes sparkle {
-            0% {filter: brightness(1) contrast(1);}
-            50% {filter: brightness(1.3) contrast(1.2);}
-            100% {filter: brightness(1) contrast(1);}
-        }
-        .sparkle {
-            animation: sparkle 2s ease-in-out infinite;
-        }
-        /* particles that float across slideshow */
-        .sparkle-particle {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            background: radial-gradient(circle, #ffffff 0%, #ffeb3b 60%, rgba(255,255,255,0) 100%);
-            border-radius: 50%;
-            opacity: 0.9;
-            animation: moveSpark 3s linear infinite;
-        }
-        @keyframes moveSpark {
-            0% { transform: translateX(-10%) translateY(var(--startY)); opacity:1; }
-            80% { opacity:0.8; }
-            100% { transform: translateX(110%) translateY(var(--endY)); opacity:0; }
-        }
-        /* lava lamp style blobs */
-        .lava-blob {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            background: rgba(255,69,0,0.6);
-            border-radius: 40%;
-            animation: morph 6s ease-in-out infinite;
-            pointer-events: none;
-            mix-blend-mode: screen;
-        }
-        @keyframes morph {
-            0% {transform: scale(1) translate(0,0); border-radius: 40%;}
-            25% {transform: scale(1.3) translate(10px,20px); border-radius: 60%;}
-            50% {transform: scale(0.8) translate(-20px,30px); border-radius: 50%;}
-            75% {transform: scale(1.1) translate(20px,-10px); border-radius: 70%;}
-            100% {transform: scale(1) translate(0,0); border-radius: 40%;}
-        }
+
+
+
         
         /* color shift header */
         @keyframes colorShift {
@@ -410,11 +297,6 @@
         </div>
         
         <div class="content">
-            <div class="image-section">
-                <img src="https://via.placeholder.com/300x300?text=Mascara+Dior+1" alt="Mascara Dior 1" class="sparkle">
-                <img src="https://via.placeholder.com/300x300?text=Mascara+Dior+2" alt="Mascara Dior 2" class="sparkle">
-                <img src="https://via.placeholder.com/300x300?text=Mascara+Dior+3" alt="Mascara Dior 3" class="sparkle">
-            </div>
             <div class="description-section">
                 <h2>Come è Formulato</h2>
                 
@@ -478,60 +360,7 @@
         </div>
     </div>
     <script>
-        let slideIndex = 0;
-        showSlide(slideIndex);
-        function changeSlide(n) {
-            showSlide(slideIndex += n);
-        }
-        function showSlide(n) {
-            const slides = document.getElementsByClassName('slide');
-            if (n >= slides.length) { slideIndex = 0; }
-            if (n < 0) { slideIndex = slides.length - 1; }
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = 'none';
-            }
-            slides[slideIndex].style.display = 'block';
-        }
-        // auto advance every 5 seconds
-        setInterval(function() { changeSlide(1); }, 5000);
-        
-        // sparkle particles over slideshow
-        function createSparkle() {
-            const container = document.querySelector('.slideshow-container');
-            if (!container) return;
-            const sparkle = document.createElement('div');
-            sparkle.className = 'sparkle-particle';
-            const startY = Math.random() * 80 + 10 + '%';
-            const endY = Math.random() * 80 + 10 + '%';
-            sparkle.style.setProperty('--startY', startY);
-            sparkle.style.setProperty('--endY', endY);
-            const delay = Math.random() * 3;
-            sparkle.style.animationDelay = `${delay}s`;
-            container.appendChild(sparkle);
-            sparkle.addEventListener('animationend', () => {
-                sparkle.remove();
-            });
-        }
-        setInterval(createSparkle, 500);
-        
-        // lava lamp blobs
-        function createLava() {
-            const container = document.querySelector('.slideshow-container');
-            if (!container) return;
-            const blob = document.createElement('div');
-            blob.className = 'lava-blob';
-            const x = Math.random() * 80 + 10;
-            const y = Math.random() * 80 + 10;
-            blob.style.left = x + '%';
-            blob.style.top = y + '%';
-            container.appendChild(blob);
-            blob.addEventListener('animationiteration', () => {
-                blob.style.left = (Math.random() * 80 + 10) + '%';
-                blob.style.top = (Math.random() * 80 + 10) + '%';
-            });
-            setTimeout(() => { blob.remove(); }, 12000);
-        }
-        setInterval(createLava, 1500);
+
         
         // manage relaxing audio toggle
         function toggleAudio() {
